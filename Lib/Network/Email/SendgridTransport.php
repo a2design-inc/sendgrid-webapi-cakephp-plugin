@@ -50,11 +50,6 @@ class SendgridTransport extends AbstractTransport {
         $this->_headers = $this->_cakeEmail->getHeaders();
         $this->_recipients = $email->to();
 
-//        pr($this->_headers); exit;
-//        pr($this->_cakeEmail); exit;
-//        pr($this->_cakeEmail->message('html')); exit;
-//        pr($this->_recipients); exit;
-
         return $this->_sendPart();
 
     }

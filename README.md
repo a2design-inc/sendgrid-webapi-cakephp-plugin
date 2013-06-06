@@ -1,6 +1,7 @@
 # Sendgrid WebAPI plugin for CakePHP
 
 Copyright 2013, [a2design-company](http://a2design.biz)
+
 Licensed under The MIT License
 
 ### Version
@@ -13,7 +14,7 @@ You can clone the plugin into your project:
 
 ```
 cd path/to/app/Plugin
-git clone git@github.com:a2design-company/Sendgrid-WebAPI-CakePHP-plugin.git
+git clone git@github.com:a2design-company/Sendgrid-WebAPI-CakePHP-plugin.git Sendgrid
 ```
 
 Bootstrap the plugin in app/Config/bootstrap.php:
