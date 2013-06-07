@@ -67,7 +67,9 @@ class SendgridTransport extends AbstractTransport {
 
         //Sendgrid Substitution Tags
         if (!empty($this->_headers['X-Sub'])) {
-            $json['sub'] = $this->_headers['X-Sub'];
+            foreach ($this->_headers['X-Sub'] as $key => $value) {
+                $json['sub'][$key] = array_splice($value, 0, $this->_config['count']);
+            }
         }
 
         $params = array(
