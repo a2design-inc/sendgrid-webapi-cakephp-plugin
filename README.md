@@ -1,12 +1,43 @@
-# Sendgrid WebAPI plugin for CakePHP
+# CakePHP plugin for sending emails via SendGrid WebAPI 
 
-Copyright 2013, [a2design-company](http://a2design.biz)
+### Usage
 
-Licensed under The MIT License
+This plugin uses [CakeEmail class](http://book.cakephp.org/2.0/en/core-utility-libraries/email.html), and works almost the same.
 
-### Version
+Basic example:
 
-Written for CakePHP 2.0+
+```php
+App::uses('CakeEmail', 'Network/Email');
+$email = new CakeEmail('sendGrid');
+
+$email->to('recipient@domain.com');
+$email->subject('Test email via SendGrid');
+$email->send('Message');
+```
+
+More advanced example:
+
+```php
+App::uses('CakeEmail', 'Network/Email');
+$email = new CakeEmail('sendGrid');
+
+$email->template('default', 'default');
+$email->emailFormat('html');
+$email->viewVars(array('name' => 'Your Name'));
+$email->to(array('recipient1@domain.com' => 'Recipient1', 'recipient2@domain.com' => 'Recipient2'));
+$email->subject('Test email via SendGrid');
+$email->addHeaders(array('X-Tag' => 'my tag'));
+$email->attachments(array(
+    'cake.icon.png' => array(
+        'file' => WWW_ROOT . 'img' . DS . 'cake.icon.png'
+	)
+));
+
+$email->send();
+```
+
+The syntax of all parameters is the same as the default [CakeEmail class](http://book.cakephp.org/2.0/en/core-utility-libraries/email.html):
+
 
 ### Installation
 
@@ -35,54 +66,24 @@ class EmailConfig {
             'from' => 'you-email@sendgrid.com',
             'fromName' => 'You name',
             'timeout' => 30,
-            'username' => 'username@sendgrid.com', //credentials username
-            'password' => 'password', //credentials password
+            'username' => 'username@sendgrid.com', //SendGrid username
+            'password' => 'password', //SendGrid password
             'client' => null,
             'log' => false,
             'emailFormat' => 'both',
-            'category' => 'transaction', //default Sendgrid category for email
-            'count' => 200, //count of email to send for one API call, max 500, default 500
+            'category' => 'transaction', //default SendGrid category for emails
+            'count' => 200, //count of email to send in one API call, max 500, default 500
         );
 }
 ```
 
-### Usage
 
-This plugin uses [CakeEmail](http://book.cakephp.org/2.0/en/core-utility-libraries/email.html), and works virtually the same.
+### Requirements
 
-Then, simply send messages like this:
+CakePHP 2.0+
 
-```php
-App::uses('CakeEmail', 'Network/Email');
-$email = new CakeEmail('sendGrid');
+### License
 
-$email->to('recipient@domain.com');
-$email->subject('Test email via SedGrid');
-$email->send('Message');
-```
+Licensed under The MIT License
 
-Or use more resources:
-
-```php
-App::uses('CakeEmail', 'Network/Email');
-$email = new CakeEmail('sendGrid');
-
-$email->template('default', 'default');
-$email->emailFormat('html');
-$email->viewVars(array('name' => 'Your Name'));
-$email->to(array('recipient1@domain.com' => 'Recipient1', 'recipient2@domain.com' => 'Recipient2'));
-$email->subject('Test email via SedGrid');
-$email->addHeaders(array('X-Tag' => 'my tag'));
-$email->attachments(array(
-    'cake.icon.png' => array(
-        'file' => WWW_ROOT . 'img' . DS . 'cake.icon.png'
-	)
-));
-
-$email->send();
-```
-
-
-The syntax of all parameters is the same as the default CakeEmail:
-
-http://book.cakephp.org/2.0/en/core-utility-libraries/email.html
+Developed by [A2 Design Inc.](http://www.a2design.biz)
