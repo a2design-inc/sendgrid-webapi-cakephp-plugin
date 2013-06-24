@@ -1,4 +1,4 @@
-# CakePHP plugin for sending emails via SendGrid WebAPI 
+# CakePHP plugin for SendGrid WebAPI
 
 ### Usage
 
