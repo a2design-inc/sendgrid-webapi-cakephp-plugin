@@ -45,7 +45,7 @@ You can clone the plugin into your project:
 
 ```
 cd path/to/app/Plugin
-git clone git@github.com:a2design-company/Sendgrid-WebAPI-CakePHP-plugin.git Sendgrid
+git clone git@github.com:a2design-company/sendgrid-webapi-cakephp-plugin.git Sendgrid
 ```
 
 Bootstrap the plugin in app/Config/bootstrap.php:
