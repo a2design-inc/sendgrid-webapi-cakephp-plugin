@@ -1,9 +1,9 @@
 {
-    "name": "a2design-company/sendgrid-webapi-cakephp-plugin",
+    "name": "nozzle/sendgrid-webapi-cakephp-plugin",
     "description": "Sendgrid WebAPI CakePHP plugin",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "sendgrid", "api"],
-    "homepage": "https://github.com/a2design-company/sendgrid-webapi-cakephp-plugin",
+    "homepage": "https://github.com/nozzle/sendgrid-webapi-cakephp-plugin",
     "license": "MIT",
     "authors": [
         {
