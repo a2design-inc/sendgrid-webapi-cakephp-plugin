@@ -1,6 +1,7 @@
 <?php
 
 App::uses('AbstractTransport', 'Network/Email');
+App::uses('HttpSocket', 'Network/Http');
 
 class SendgridTransport extends AbstractTransport {
     /**
@@ -118,17 +119,9 @@ class SendgridTransport extends AbstractTransport {
 
     private function _exec($params) {
         $request =  'http://sendgrid.com/api/mail.send.json';
-
-        $session = curl_init($request);
-        curl_setopt ($session, CURLOPT_POST, true);
-        curl_setopt ($session, CURLOPT_POSTFIELDS, $params);
-        curl_setopt($session, CURLOPT_HEADER, false);
-        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($session);
-        curl_close($session);
-
-        return $response;
+        $email = new HttpSocket();
+        $response = $email->post($request, $params);
+        return $response->body;
     }
 
 }
