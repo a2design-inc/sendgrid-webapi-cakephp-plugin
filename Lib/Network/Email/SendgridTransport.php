@@ -84,6 +84,7 @@ class SendgridTransport extends AbstractTransport {
             'from'      => $this->_config['from'],
             'fromname'  => $this->_config['fromName'],
         );
+        if (!empty($this->_config['replyTo'])) $params['replyto'] = $this->_config['replyTo'];
 
         $attachments = $this->_cakeEmail->attachments();
         if (!empty($attachments)) {
