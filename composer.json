@@ -3,7 +3,7 @@
     "description": "Sendgrid WebAPI CakePHP plugin",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "sendgrid", "api"],
-    "homepage": "https://github.com/a2design-company/sendgrid-webapi-cakephp-plugin",
+    "homepage": "https://github.com/a2design-inc/sendgrid-webapi-cakephp-plugin",
     "license": "MIT",
     "authors": [
         {
@@ -13,13 +13,13 @@
         },
         {
             "name": "A2 Design",
-            "homepage": "https://github.com/a2design-company",
+            "homepage": "https://github.com/a2design-inc",
             "role": "Author"
         }
     ],
     "support": {
-        "issues": "https://github.com/a2design-company/sendgrid-webapi-cakephp-plugin/issues",
-        "source": "https://github.com/a2design-company/sendgrid-webapi-cakephp-plugin"
+        "issues": "https://github.com/a2design-inc/sendgrid-webapi-cakephp-plugin/issues",
+        "source": "https://github.com/a2design-inc/sendgrid-webapi-cakephp-plugin"
     },
     "require": {
         "php": ">=5.3.0",
