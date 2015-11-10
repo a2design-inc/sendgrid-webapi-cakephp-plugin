@@ -120,7 +120,7 @@ class SendgridTransport extends AbstractTransport {
     }
 
     private function _exec($params) {
-        $request =  'http://sendgrid.com/api/mail.send.json';
+        $request =  'https://api.sendgrid.com/api/mail.send.json';
         $email = new HttpSocket();
         $response = $email->post($request, $params);
         return $response->body;
