@@ -74,6 +74,7 @@ class SendgridTransport extends AbstractTransport {
             }
         }
 
+        $replyTos = array_keys($this->_replyTo);
         $params = array(
             'api_user'  => $this->_config['username'],
             'api_key'   => $this->_config['password'],
@@ -84,7 +85,7 @@ class SendgridTransport extends AbstractTransport {
             'text'      => $this->_cakeEmail->message('text'),
             'from'      => $this->_config['from'],
             'fromname'  => $this->_config['fromName'],
-            'replyto'   => array_keys($this->_replyTo)[0],
+            'replyto'   => $replyTos[0],
         );
 
         $attachments = $this->_cakeEmail->attachments();
