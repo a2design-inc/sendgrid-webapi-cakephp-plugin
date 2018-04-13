@@ -1,5 +1,5 @@
 {
-    "name": "a2design-company/sendgrid-webapi-cakephp-plugin",
+    "name": "a2design-ink/sendgrid-webapi-cakephp-plugin",
     "description": "Sendgrid WebAPI CakePHP plugin",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "sendgrid", "api"],
